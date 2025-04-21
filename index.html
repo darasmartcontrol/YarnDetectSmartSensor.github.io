@@ -1,49 +1,11 @@
-﻿<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="سنسورنوری هوشمند تشخیص پارگی نخ برای صنعت نساجی">
-    <meta name="keywords" content="سنسور پارگی نخ, نساجی, سنسور نوری, دارا هوشمند کنترل">
+    <meta name="description" content="سنسورنوری هوشمند تشخیص پارگی نخ برای صنعت نساجی - YarnDetectSmartSensor">
+    <meta name="keywords" content="سنسور پارگی نخ, نساجی, سنسور نوری, دارا هوشمند کنترل, YarnDetectSmartSensor">
+    <link rel="canonical" href="https://YarnDetectSmartSensor.github.io">
     <title>سنسورنوری هوشمند تشخیص پارگی نخ</title>
     <!-- Farsi Font -->
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
@@ -66,7 +28,7 @@
             color: #fff !important;
         }
         .navbar-brand:hover, .nav-link:hover {
-            color: #fed136 !important;
+            color: #007bff !important;
         }
         #mainNav {
             background-color: #212529;
@@ -75,8 +37,8 @@
             background: url('images/fig1.jpg') no-repeat center center;
             background-size: cover;
             height: 100vh;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #212529;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
         }
         .masthead h1 {
             font-size: 3rem;
@@ -84,6 +46,7 @@
         .section-heading {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #007bff;
         }
         .portfolio-item img {
             width: 100%;
@@ -99,13 +62,33 @@
         .language-toggle {
             position: fixed;
             top: 20px;
-            left: 20px;
-            z-index: 1000;
+            right: 20px;
+            z-index: 1001;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         .language-toggle a {
-            margin: 0 10px;
-            color: #fed136;
+            margin: 0 5px;
+            color: #fff;
             text-decoration: none;
+        }
+        .language-toggle a:hover {
+            color: #007bff;
+        }
+        @media (max-width: 576px) {
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 3px 6px;
+            }
+            .language-toggle a {
+                font-size: 0.9rem;
+            }
+        }
+        footer {
+            background-color: #212529;
+            color: #fff;
         }
     </style>
 </head>
@@ -144,7 +127,7 @@
             <h1 class="lang-fa">سنسورنوری هوشمند تشخیص پارگی نخ</h1>
             <h1 class="lang-en" style="display: none;">Smart Optical Yarn Break Detection Sensor</h1>
             <h3 class="lang-fa">نوآوری در صنعت نساجی</h3>
-            <h3 class="lang-en" style="display: none;">Innovation in Textile Industry</h3>
+            <h3 class="lang-en" style="display: none" style="display: none;">Innovation in Textile Industry</h3>
         </div>
     </header>
 
@@ -231,7 +214,7 @@
             <h2 class="section-heading text-center lang-en" style="display: none;">Images</h2>
             <div class="row">
                 <div class="col-md-6 portfolio-item">
-                    <img src="images/fig2.jpg" alt="سنسور تشخیص پارگی نخ">
+                    <img src="images/fig2.jpg" alt="نمای نزدیک سنسور">
                     <p class="lang-fa">نمای نزدیک سنسور</p>
                     <p class="lang-en" style="display: none;">Close-up of the Sensor</p>
                 </div>
@@ -239,7 +222,6 @@
                     <img src="images/fig3.jpg" alt="بسته‌بندی سنسور">
                     <p class="lang-fa">بسته‌بندی سنسور</p>
                     <p class="lang-en" style="display: none;">Sensor Packaging</p>
-                </div>="lang-en" style="display: none;">Sensor Packaging</p>
                 </div>
             </div>
         </div>
@@ -267,14 +249,14 @@
                     <p class="lang-en" style="display: none;">Break Detection</p>
                 </div>
                 <div class="col-md-4 gif-container">
-                    <img src="images/dirt1.gif" alt="اعلام وضعیت کثیفی">
-                    <p class="lang-fa">اعلام وضعیت کثیفی (کارکرد صحیح)</p>
-                    <p class="lang-en" style="display: none;">Dirtiness Alert</p>
+                    <img src="images/dirt1.gif" alt="اعلام وضعیت کثیفی 1">
+                    <p class="lang-fa">اعلام وضعیت کثیفی 1</p>
+                    <p class="lang-en" style="display: none;">Dirtiness Alert 1</p>
                 </div>
                 <div class="col-md-4 gif-container">
-                    <img src="images/dirt2.gif" alt="اعلام افزایش کثیفی (خروج از مدار)">
-                    <p class="lang-fa">اعلام وضعیت کثیفی</p>
-                    <p class="lang-en" style="display: none;">Dirtiness Alert</p>
+                    <img src="images/dirt2.gif" alt="اعلام وضعیت کثیفی 2">
+                    <p class="lang-fa">اعلام وضعیت کثیفی 2</p>
+                    <p class="lang-en" style="display: none;">Dirtiness Alert 2</p>
                 </div>
                 <div class="col-md-4 gif-container">
                     <img src="images/outCircuit.gif" alt="اعلام خروج سنسور از مدار">
@@ -283,13 +265,13 @@
                 </div>
                 <div class="col-md-4 gif-container">
                     <img src="images/timerFinished.gif" alt="اعلام پایان زمان تایمر">
-                    <p class="lang-fa">اعلام پایان زمان تایمر(فرمان توقف)</p>
+                    <p class="lang-fa">اعلام پایان زمان تایمر</p>
                     <p class="lang-en" style="display: none;">Timer End</p>
                 </div>
                 <div class="col-md-4 gif-container">
                     <img src="images/resetTimer.gif" alt="اعلام ریست تایمر">
-                    <p class="lang-fa">اعلام پایان زمان تایمر</p>
-                    <p class="lang-en" style="display: none;">Timer End</p>
+                    <p class="lang-fa">اعلام ریست تایمر</p>
+                    <p class="lang-en" style="display: none;">Timer Reset</p>
                 </div>
             </div>
         </div>
@@ -318,14 +300,12 @@
                 <p>هدف از ارائه‌ی این محصول، تولید یک سنسور هوشمند تشخیص پارگی نخ به صورت غیر تماسی است. این سنسور، قادر به تشخیص ریزترین نمره های نخ با بالاترین سرعت می‌باشد. این سنسور در سه حوزه‌ی الکترونیک، بدنه‌ی مکانیکی و کد نویسی، دارای نوآوریهایی نسبت به نمونه‌های موجود هست. قطعات الکتریکی اوریجینال با طول عمر بالا در طراحی بورد الکترونیکی استفاده شده است. سنسور مجهز به خروجی هم زمان P و N است. بدنه‌ی سنسور تا حد بسیار زیادی در برابرنفوذ آلودگی‌های محیط‌های صنعتی مقاوم طراحی شده است. با توجه به نوری بودن سنسور، نسبت به نور محیط غیر حساس بوده و به لحاظ الکترونیکی، نسبت به نویزهای صنعتی مقاوم است. یکی از مشخصه‌های مهم این سنسور قابلیت، تولید بدنه‌ی سنسور به سفارش کاربر به لحاظ ابعادی است. همچنین، کدها و برنامه دهی سنسور به سفارش کاربر قابل تغییر می‌باشد.</p>
                 <h3>مقدمه</h3>
                 <p>شرکت دارا هوشمند کنترل با هدف ارائه‌ی محصولات در زمینه‌ی کنترل و هوشمندسازی صنعتی در سال ۱۴۰۱ تاسیس شده است. یکی از محصولات این شرکت، سنسور هوشمند تشخیص پارگی نخ می‌باشد. سنسور تشخیص پارگی نخ، در صنایع ریسندگی و بافندگی استفاده می‌شوند. اهمیت این سنسور، در افزایش کیفیت محصول و جلوگیری از اتلاف مواد اولیه، قابل توجه است. در بسیاری از ماشینهای بافندگی و ریسندگی، خروجی سنسور به دستگاهی جهت قطع نخ، فرمان توقف به دستگاه می‌دهد. در صورت قطع نشدن حرکت دستگاه، امکان هدر رفت مواد اولیه و حتی ایجاد مشکلاتی نظیر آتش سوزی در الیاف بهم پیچیده شده، وجود دارد. بیشتر سنسورهای موجود و استفاده شده در این دستگاهها، سنسورهای تماسی بر مبنای پیزو الکتریک یا خازنی می‌باشند. یکی از مشکلات سنسورهای تماسی، عدم تشخیص تمام انواع نخها در تمام سرعتهای لازم است. همچنین، به دلیل تماس و مالش با نخ در آن الکتریسیته‌ی ساکن ایجاد می‌شود که کیفیت نخ را کم می‌کند. سنسورهای غیر تماسی و نوری هم داخلی و هم خارجی نیز در بازار ایران موجود می‌باشند.</p>
-                <!-- Add remaining sections of the paper as needed -->
             </div>
             <div class="lang-en" style="display: none;">
                 <h3>Abstract</h3>
                 <p>The purpose of this product is to develop a non-contact smart yarn break detection sensor. This sensor can detect the finest yarn gauges at the highest speeds. It introduces innovations in three areas: electronics, mechanical housing, and coding, compared to existing models. Original, long-lasting electrical components are used in the electronic board design. The sensor is equipped with simultaneous P and N outputs. The sensor housing is designed to be highly resistant to industrial environmental contaminants. Being an optical sensor, it is insensitive to ambient light and electronically resistant to industrial noise. A key feature of this sensor is the ability to produce the sensor housing according to user dimensional requirements. Additionally, the sensor’s code and programming can be customized based on user requests.</p>
                 <h3>Introduction</h3>
                 <p>Dara Hooshmand Control was established in 2022 with the aim of providing products in the field of industrial control and automation. One of the company’s products is the smart yarn break detection sensor. Yarn break detection sensors are used in spinning and weaving industries. The importance of this sensor lies in improving product quality and preventing material waste. In many weaving and spinning machines, the sensor’s output signals a device to stop the machine by cutting the yarn. If the machine does not stop, there is a risk of material waste and even issues like fire hazards due to tangled fibers. Most existing sensors used in these machines are contact-based, relying on piezoelectric or capacitive technology. A major issue with contact sensors is their inability to detect all types of yarn at all required speeds. Additionally, contact with the yarn generates static electricity, reducing yarn quality. Non-contact optical sensors, both domestic and foreign, are also available in the Iranian market.</p>
-                <!-- Add remaining sections of the paper as needed -->
             </div>
         </div>
     </section>
@@ -351,7 +331,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-3 bg-dark text-white text-center">
+    <footer class="py-3 text-center">
         <p class="lang-fa">© 2025 دارا هوشمند کنترل</p>
         <p class="lang-en" style="display: none;">© 2025 Dara Hooshmand Control</p>
     </footer>
