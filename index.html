@@ -36,6 +36,7 @@
         .masthead {
             background: url('images/fig1.jpg') no-repeat center center;
             background-size: cover;
+            background-color: #cccccc; /* Darker fallback color if image is missing */
             height: 100vh;
             color: #212529;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
@@ -61,10 +62,10 @@
         }
         .language-toggle {
             position: fixed;
-            top: 20px;
+            top: 60px; /* Moved down to avoid nav bar overlap */
             right: 20px;
-            z-index: 1001;
-            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1040; /* Higher than Bootstrap's fixed-top nav (z-index: 1030) */
+            background-color: #000; /* Solid black for better visibility */
             padding: 5px 10px;
             border-radius: 5px;
         }
@@ -78,7 +79,7 @@
         }
         @media (max-width: 576px) {
             .language-toggle {
-                top: 10px;
+                top: 50px; /* Adjusted for mobile */
                 right: 10px;
                 padding: 3px 6px;
             }
@@ -127,7 +128,7 @@
             <h1 class="lang-fa">سنسورنوری هوشمند تشخیص پارگی نخ</h1>
             <h1 class="lang-en" style="display: none;">Smart Optical Yarn Break Detection Sensor</h1>
             <h3 class="lang-fa">نوآوری در صنعت نساجی</h3>
-            <h3 class="lang-en" style="display: none" style="display: none;">Innovation in Textile Industry</h3>
+            <h3 class="lang-en" style="display: none;">Innovation in Textile Industry</h3>
         </div>
     </header>
 
@@ -177,7 +178,7 @@
                 <li>تجهیز هر سنسور به پورت ورودی و خروجی</li>
                 <li>سنسور Master اولین سنسور در خط سنسورها</li>
                 <li>تجهیز سنسور Master به سنسور IR</li>
-                <li>تجهیز سنسور Master به تایمر برای فرمان پارگی</li>
+                <li>تمیز سنسور Master به تایمر برای فرمان پارگی</li>
                 <li>خارج کردن سنسورها از مدار توسط ریموت IR</li>
                 <li>امکان انجام تنظیمات مورد نظر توسط کاربر در وضعیت خارج از مدار</li>
                 <li>ریست کردن تایمر سنسور توسط ریموت IR</li>
@@ -187,7 +188,7 @@
             </ul>
             <ul class="lang-en" style="display: none;">
                 <li>Sensor supply voltage: 12 to 24 V</li>
-                <li>Calibration required in a no-yarn, stationary state</li>
+                <li>Calibration required in a no-yarn, stationaryCMS state</li>
                 <li>Recalibration possible after power disconnection/reconnection</li>
                 <li>Simultaneous P and N output</li>
                 <li>Ability to connect any number of sensors in series to reduce wiring</li>
@@ -283,7 +284,7 @@
             <h2 class="section-heading text-center lang-fa">دمو</h2>
             <h2 class="section-heading text-center lang-en" style="display: none;">Demo</h2>
             <div class="text-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="دموی سنسور" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JGJfP35JKFg" title="دموی سنسور" allowfullscreen></iframe>
                 <p class="lang-fa">دموی عملکرد سنسور</p>
                 <p class="lang-en" style="display: none;">Sensor Performance Demo</p>
             </div>
