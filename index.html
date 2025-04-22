@@ -406,26 +406,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <!-- Language Toggle Script -->
     <script>
-        function toggleLanguage(lang) {
-            const body = document.querySelector('body');
-            if (lang === 'fa') {
-                document.querySelectorAll('.lang-fa').forEach(el => el.style.display = 'block');
-                document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-                document.querySelector('html').setAttribute('lang', 'fa');
-                document.querySelector('html').setAttribute('dir', 'rtl');
-                body.style.direction = 'rtl';
-                body.style.textAlign = 'right';
-                body.style.fontFamily = "'Vazir', sans-serif";
-            } else {
-                document.querySelectorAll('.lang-fa').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-                document.querySelector('html').setAttribute('lang', 'en');
-                document.querySelector('html').setAttribute('dir', 'ltr');
-                body.style.direction = 'ltr';
-                body.style.textAlign = 'left';
-                body.style.fontFamily = "'Arial', sans-serif";
-            }
+    function toggleLanguage(lang) {
+        const body = document.querySelector('body');
+        if (lang === 'fa') {
+            document.querySelectorAll('.lang-fa').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+            document.querySelector('html').setAttribute('lang', 'fa');
+            document.querySelector('html').setAttribute('dir', 'rtl');
+            body.style.direction = 'rtl';
+            body.style.textAlign = 'right';
+            body.style.fontFamily = "'Vazir', sans-serif";
+        } else {
+            document.querySelectorAll('.lang-fa').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+            document.querySelector('html').setAttribute('lang', 'en');
+            document.querySelector('html').setAttribute('dir', 'ltr');
+            body.style.direction = 'ltr';
+            body.style.textAlign = 'left';
+            body.style.fontFamily = "'Arial', sans-serif";
         }
-    </script>
+    }
+</script>
 </body>
 </html>
