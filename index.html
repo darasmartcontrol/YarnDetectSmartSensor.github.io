@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         body {
@@ -36,10 +38,10 @@
         .masthead {
             background: url('images/fig1.jpg') no-repeat center center;
             background-size: cover;
-            background-color: #cccccc; /* Darker fallback color if image is missing */
+            background-color: #cccccc;
             height: 100vh;
-            color: #212529;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+            color: #ffffff; /* White text */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Darker shadow */
         }
         .masthead h1 {
             font-size: 3rem;
@@ -62,14 +64,14 @@
         }
         .language-toggle {
             position: fixed;
-            top: 80px; /* Moved further down to avoid nav bar overlap */
+            top: 80px;
             right: 20px;
-            z-index: 1040; /* Higher than Bootstrap's fixed-top nav (z-index: 1030) */
-            background-color: #000; /* Solid black for better visibility */
+            z-index: 1040;
+            background-color: #000;
             padding: 5px 10px;
             border-radius: 5px;
-            border: 1px solid #fff; /* Added border for visibility */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+            border: 1px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         .language-toggle a {
             margin: 0 5px;
@@ -81,7 +83,7 @@
         }
         @media (max-width: 576px) {
             .language-toggle {
-                top: 70px; /* Adjusted for mobile */
+                top: 70px;
                 right: 10px;
                 padding: 3px 6px;
             }
@@ -92,6 +94,17 @@
         footer {
             background-color: #212529;
             color: #fff;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-list li {
+            margin: 10px 0;
+        }
+        .contact-list i {
+            margin-left: 8px;
+            margin-right: 8px;
         }
     </style>
 </head>
@@ -285,7 +298,7 @@
         <div class="container">
             <h2 class="section-heading text-center lang-fa">دمو</h2>
             <h2 class="section-heading text-center lang-en" style="display: none;">Demo</h2>
-            <div class="text-center">
+            <div class="text-center mb-4">
                 <video width="560" height="315" controls>
                     <source src="videos/demo.mp4" type="video/mp4">
                     <p class="lang-fa">مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.</p>
@@ -293,6 +306,21 @@
                 </video>
                 <p class="lang-fa">دموی عملکرد سنسور</p>
                 <p class="lang-en" style="display: none;">Sensor Performance Demo</p>
+            </div>
+            <div class="text-center mb-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="دموی سنسور ۲" allowfullscreen></iframe>
+                <p class="lang-fa">دموی سنسور ۲</p>
+                <p class="lang-en" style="display: none;">Sensor Demo 2</p>
+            </div>
+            <div class="text-center mb-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="دموی سنسور ۳" allowfullscreen></iframe>
+                <p class="lang-fa">دموی سنسور ۳</p>
+                <p class="lang-en" style="display: none;">Sensor Demo 3</p>
+            </div>
+            <div class="text-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="دموی سنسور ۴" allowfullscreen></iframe>
+                <p class="lang-fa">دموی سنسور ۴</p>
+                <p class="lang-en" style="display: none;">Sensor Demo 4</p>
             </div>
         </div>
     </section>
@@ -303,16 +331,12 @@
             <h2 class="section-heading text-center lang-fa">تحقیقات</h2>
             <h2 class="section-heading text-center lang-en" style="display: none;">Research</h2>
             <div class="lang-fa">
-                <h3>چکیده</h3>
+                <h3>توضیحات</h3>
                 <p>هدف از ارائه‌ی این محصول، تولید یک سنسور هوشمند تشخیص پارگی نخ به صورت غیر تماسی است. این سنسور، قادر به تشخیص ریزترین نمره های نخ با بالاترین سرعت می‌باشد. این سنسور در سه حوزه‌ی الکترونیک، بدنه‌ی مکانیکی و کد نویسی، دارای نوآوریهایی نسبت به نمونه‌های موجود هست. قطعات الکتریکی اوریجینال با طول عمر بالا در طراحی بورد الکترونیکی استفاده شده است. سنسور مجهز به خروجی هم زمان P و N است. بدنه‌ی سنسور تا حد بسیار زیادی در برابرنفوذ آلودگی‌های محیط‌های صنعتی مقاوم طراحی شده است. با توجه به نوری بودن سنسور، نسبت به نور محیط غیر حساس بوده و به لحاظ الکترونیکی، نسبت به نویزهای صنعتی مقاوم است. یکی از مشخصه‌های مهم این سنسور قابلیت، تولید بدنه‌ی سنسور به سفارش کاربر به لحاظ ابعادی است. همچنین، کدها و برنامه دهی سنسور به سفارش کاربر قابل تغییر می‌باشد.</p>
-                <h3>مقدمه</h3>
-                <p>شرکت دارا هوشمند کنترل با هدف ارائه‌ی محصولات در زمینه‌ی کنترل و هوشمندسازی صنعتی در سال ۱۴۰۱ تاسیس شده است. یکی از محصولات این شرکت، سنسور هوشمند تشخیص پارگی نخ می‌باشد. سنسور تشخیص پارگی نخ، در صنایع ریسندگی و بافندگی استفاده می‌شوند. اهمیت این سنسور، در افزایش کیفیت محصول و جلوگیری از اتلاف مواد اولیه، قابل توجه است. در بسیاری از ماشینهای بافندگی و ریسندگی، خروجی سنسور به دستگاهی جهت قطع نخ، فرمان توقف به دستگاه می‌دهد. در صورت قطع نشدن حرکت دستگاه، امکان هدر رفت مواد اولیه و حتی ایجاد مشکلاتی نظیر آتش سوزی در الیاف بهم پیچیده شده، وجود دارد. بیشتر سنسورهای موجود و استفاده شده در این دستگاهها، سنسورهای تماسی بر مبنای پیزو الکتریک یا خازنی می‌باشند. یکی از مشکلات سنسورهای تماسی، عدم تشخیص تمام انواع نخها در تمام سرعتهای لازم است. همچنین، به دلیل تماس و مالش با نخ در آن الکتریسیته‌ی ساکن ایجاد می‌شود که کیفیت نخ را کم می‌کند. سنسورهای غیر تماسی و نوری هم داخلی و هم خارجی نیز در بازار ایران موجود می‌باشند.</p>
             </div>
             <div class="lang-en" style="display: none;">
-                <h3>Abstract</h3>
+                <h3>Description</h3>
                 <p>The purpose of this product is to develop a non-contact smart yarn break detection sensor. This sensor can detect the finest yarn gauges at the highest speeds. It introduces innovations in three areas: electronics, mechanical housing, and coding, compared to existing models. Original, long-lasting electrical components are used in the electronic board design. The sensor is equipped with simultaneous P and N outputs. The sensor housing is designed to be highly resistant to industrial environmental contaminants. Being an optical sensor, it is insensitive to ambient light and electronically resistant to industrial noise. A key feature of this sensor is the ability to produce the sensor housing according to user dimensional requirements. Additionally, the sensor’s code and programming can be customized based on user requests.</p>
-                <h3>Introduction</h3>
-                <p>Dara Hooshmand Control was established in 2022 with the aim of providing products in the field of industrial control and automation. One of the company’s products is the smart yarn break detection sensor. Yarn break detection sensors are used in spinning and weaving industries. The importance of this sensor lies in improving product quality and preventing material waste. In many weaving and spinning machines, the sensor’s output signals a device to stop the machine by cutting the yarn. If the machine does not stop, there is a risk of material waste and even issues like fire hazards due to tangled fibers. Most existing sensors used in these machines are contact-based, relying on piezoelectric or capacitive technology. A major issue with contact sensors is their inability to detect all types of yarn at all required speeds. Additionally, contact with the yarn generates static electricity, reducing yarn quality. Non-contact optical sensors, both domestic and foreign, are also available in the Iranian market.</p>
             </div>
         </div>
     </section>
@@ -322,8 +346,14 @@
         <div class="container">
             <h2 class="section-heading text-center lang-fa">درباره ما</h2>
             <h2 class="section-heading text-center lang-en" style="display: none;">About Us</h2>
-            <p class="lang-fa">شرکت سازنده: دارا هوشمند کنترل<br>آدرس: یزد- دانشگاه آزاد اسلامی یزد- سرای فناوری- شرکت دارا هوشمند کنترل</p>
-            <p class="lang-en" style="display: none;">Manufacturer: Dara Hooshmand Control<br>Address: Yazd, Islamic Azad University of Yazd, Technology Incubator, Dara Hooshmand Control Company</p>
+            <div class="lang-fa">
+                <p>شرکت سازنده: دارا هوشمند کنترل<br>آدرس: یزد- دانشگاه آزاد اسلامی یزد- سرای فناوری- شرکت دارا هوشمند کنترل</p>
+                <p>شرکت دارا هوشمند کنترل با هدف ارائه‌ی محصولات در زمینه‌ی کنترل و هوشمندسازی صنعتی در سال ۱۴۰۱ تاسیس شده است. یکی از محصولات این شرکت، سنسور هوشمند تشخیص پارگی نخ می‌باشد. سنسور تشخیص پارگی نخ، در صنایع ریسندگی و بافندگی استفاده می‌شوند. اهمیت این سنسور، در افزایش کیفیت محصول و جلوگیری از اتلاف مواد اولیه، قابل توجه است. در بسیاری از ماشینهای بافندگی و ریسندگی، خروجی سنسور به دستگاهی جهت قطع نخ، فرمان توقف به دستگاه می‌دهد. در صورت قطع نشدن حرکت دستگاه، امکان هدر رفت مواد اولیه و حتی ایجاد مشکلاتی نظیر آتش سوزی در الیاف بهم پیچیده شده، وجود دارد. بیشتر سنسورهای موجود و استفاده شده در این دستگاهها، سنسورهای تماسی بر مبنای پیزو الکتریک یا خازنی می‌باشند. یکی از مشکلات سنسورهای تماسی، عدم تشخیص تمام انواع نخها در تمام سرعتهای لازم است. همچنین، به دلیل تماس و مالش با نخ در آن الکتریسیته‌ی ساکن ایجاد می‌شود که کیفیت نخ را کم می‌کند.</p>
+            </div>
+            <div class="lang-en" style="display: none;">
+                <p>Manufacturer: Dara Hooshmand Control<br>Address: Yazd, Islamic Azad University of Yazd, Technology Incubator, Dara Hooshmand Control Company</p>
+                <p>Dara Hooshmand Control was established in 2022 with the aim of providing products in the field of industrial control and automation. One of the company’s products is the smart yarn break detection sensor. Yarn break detection sensors are used in spinning and weaving industries. The importance of this sensor lies in improving product quality and preventing material waste. In many weaving and spinning machines, the sensor’s output signals a device to stop the machine by cutting the yarn. If the machine does not stop, there is a risk of material waste and even issues like fire hazards due to tangled fibers. Most existing sensors used in these machines are contact-based, relying on piezoelectric or capacitive technology. A major issue with contact sensors is their inability to detect all types of yarn at all required speeds. Additionally, contact with the yarn generates static electricity, reducing yarn quality.</p>
+            </div>
         </div>
     </section>
 
@@ -332,8 +362,20 @@
         <div class="container">
             <h2 class="section-heading text-center lang-fa">تماس با ما</h2>
             <h2 class="section-heading text-center lang-en" style="display: none;">Contact Us</h2>
-            <p class="text-center lang-fa">برای اطلاعات بیشتر، با ما تماس بگیرید: info@dara-control.com</p>
-            <p class="text-center lang-en" style="display: none;">For more information, contact us: info@dara-control.com</p>
+            <div class="text-center lang-fa">
+                <ul class="contact-list">
+                    <li>ایمیل: <a href="mailto:darasmartcontrol@gmail.com">darasmartcontrol@gmail.com</a></li>
+                    <li>تلفن: <i class="fas fa-phone"></i> 09924817081</li>
+                    <li>تلفن و واتساپ: <i class="fas fa-phone"></i> <i class="fab fa-whatsapp"></i> 09131569632</li>
+                </ul>
+            </div>
+            <div class="text-center lang-en" style="display: none;">
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:darasmartcontrol@gmail.com">darasmartcontrol@gmail.com</a></li>
+                    <li>Phone: <i class="fas fa-phone"></i> 09924817081</li>
+                    <li>Phone & WhatsApp: <i class="fas fa-phone"></i> <i class="fab fa-whatsapp"></i> 09131569632</li>
+                </ul>
+            </div>
         </div>
     </section>
 
