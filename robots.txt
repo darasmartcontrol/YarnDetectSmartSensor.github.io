@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://drive.google.com/file/d/1jb2tOpER-6FrGqQ7g78a3OYQCqpMEIic/view?usp=sharing
+Sitemap: https://drive.google.com/uc?export=download&id=1jb2tOpER-6FrGqQ7g78a3OYQCqpMEIic
 
