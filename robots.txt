@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://darasmartcontrol.github.io/YarnDetectSmartSensor.github.io/site_map.xml
+Sitemap: https://drive.google.com/file/d/1jb2tOpER-6FrGqQ7g78a3OYQCqpMEIic/view?usp=sharing
+
