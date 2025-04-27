@@ -42,45 +42,80 @@
             direction: rtl;
             text-align: right;
         }
-        
-        /* Fixed Hero Section */
-        .masthead {
-            background: url('images/fig1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-            position: relative;
+<style>
+        @font-face {
+            font-family: 'BNazanin';
+            src: url('fonts/BNazanin.ttf') format('truetype');
         }
-        
-        .masthead::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.4);
-            z-index: 0;
+        body {
+            font-family: 'BNazanin', Tahoma, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
         }
-        
-        .masthead .container {
-            position: relative;
-            z-index: 1;
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        
-        .masthead h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 20px;
         }
-        
-        /* Rest of your existing styles... */
-        .navbar-brand, .nav-link {
-            color: #fff !important;
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 30px;
+            flex-grow: 1;
         }
-        /* ... (keep all other existing styles) ... */
-    </style>
-    
+        .alarm-section {
+            background: #fff8e1;
+            border-right: 4px solid #ffc107;
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .gif-container {
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            width: 50%;
+        }
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+        .gif-caption {
+            font-size: 0.85em;
+            color: #666;
+            text-align: center;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+        .connection-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        .connection-table th {
+            background-color: #f2f2f2;
+            font-weight: normal;
+        }
+        .connection-table th, 
+        .connection-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+    </style>    
     <link rel="alternate" hreflang="fa-ir" href="https://darasmartcontrol.github.io/YarnDetectSmartSensor.github.io/" />
     <meta name="google-site-verification" content="LtBjRXsUKOARanexZbpUr48xBWh-fTc9b37lfpb-wNw" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
