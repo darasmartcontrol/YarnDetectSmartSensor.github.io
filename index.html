@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>سنسورنوری هوشمند تشخیص پارگی نخ | دارا هوشمند کنترل</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <!-- Improved Meta Tags -->
+    <!-- Improved Meta Descriptions -->
     <meta class="lang-fa" name="description" content="سنسورنوری هوشمند تشخیص پارگی نخ - راه‌حل پیشرفته برای صنعت نساجی با دقت 99%. تشخیص پارگی نخ بدون تماس در سرعت‌های بالا">
     <meta class="lang-en" name="description" content="Smart Optical Yarn Detection Sensor for the Textile Industry - Non-contact yarn break detection with 99% accuracy" style="display: none;">
     
+    <!-- Optimized Keywords (separated by language) -->
     <meta class="lang-fa" name="keywords" content="سنسورنوری هوشمند تشخیص پارگی نخ, سنسور تشخیص پارگی نخ, سنسور نوری نساجی, سنسور پارگی نخ بدون تماس, دستگاه تشخیص پارگی نخ, دارا هوشمند کنترل">
     <meta class="lang-en" name="keywords" content="Yarn Detect Smart Sensor, yarn break sensor, optical textile sensor, non-contact yarn detector, Dara Hooshmand Control" style="display: none;">
     
     <link rel="canonical" href="https://darasmartcontrol.github.io/YarnDetectSmartSensor.github.io/">
+    <title>سنسورنوری هوشمند تشخیص پارگی نخ | دارا هوشمند کنترل</title>
     
-    <!-- Schema.org markup -->
+    <!-- Schema.org markup for Persian content -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,80 +29,100 @@
     }
     </script>
 
-    <!-- Fonts and CSS (keeping your original styles) -->
+    <!-- Farsi Font -->
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
-        @font-face {
-            font-family: 'BNazanin';
-            src: url('fonts/BNazanin.ttf') format('truetype');
-        }
         body {
-            font-family: 'BNazanin', Tahoma, sans-serif;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: justify;
+            font-family: 'Vazir', sans-serif;
+            color: #333;
+            direction: rtl;
+            text-align: right;
         }
-        .header {
-            display: flex;
-            align-items: center;
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #007bff !important;
+        }
+        #mainNav {
+            background-color: #212529;
+        }
+        .masthead {
+            background: url('images/fig1.jpg') no-repeat center center;
+            background-size: cover;
+            background-color: #cccccc;
+            height: 100vh;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .masthead h1 {
+            font-size: 3rem;
+        }
+        .section-heading {
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #007bff;
         }
-        .logo {
-            width: 80px;
+        .portfolio-item img {
+            width: 100%;
             height: auto;
-            margin-left: 20px;
-        }
-        h1 {
-            color: #0066cc;
-            text-align: center;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-        .alarm-section {
-            background: #fff8e1;
-            border-right: 4px solid #ffc107;
-            padding: 15px;
-            margin: 25px 0;
-            border-radius: 4px;
         }
         .gif-container {
-            text-align: center;
-            margin: 20px auto;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            width: 50%;
+            margin: 10px 0;
         }
         .gif-container img {
-            max-width: 100%;
+            width: 200px;
             height: auto;
-            border: 1px solid #ddd;
-            display: block;
-            margin: 0 auto;
         }
-        .gif-caption {
-            font-size: 0.85em;
-            color: #666;
-            text-align: center;
-            margin-top: 8px;
-            font-weight: normal;
+        .language-toggle {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1040;
+            background-color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        .connection-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
+        .language-toggle a {
+            margin: 0 5px;
+            color: #fff;
+            text-decoration: none;
         }
-        .connection-table th {
-            background-color: #f2f2f2;
-            font-weight: normal;
+        .language-toggle a:hover {
+            color: #007bff;
         }
-        .connection-table th, 
-        .connection-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
+        @media (max-width: 576px) {
+            .language-toggle {
+                top: 70px;
+                right: 10px;
+                padding: 3px 6px;
+            }
+            .language-toggle a {
+                font-size: 0.9rem;
+            }
+        }
+        footer {
+            background-color: #212529;
+            color: #fff;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-list li {
+            margin: 10px 0;
+        }
+        .contact-list i {
+            margin-left: 8px;
+            margin-right: 8px;
         }
     </style>
     <meta name="google-site-verification" content="LtBjRXsUKOARanexZbpUr48xBWh-fTc9b37lfpb-wNw" />
