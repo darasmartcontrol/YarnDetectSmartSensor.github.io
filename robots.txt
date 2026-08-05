@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://darasmartcontrol.github.io/DaraSmartControlWebpage.github.io/sitemap.xml
+
+Sitemap: https://darasmartcontrol.github.io/DaraSmartControlWebpage/sitemap.xml
